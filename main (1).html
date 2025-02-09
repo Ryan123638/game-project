@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>只能選一個答案</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+        #runaway {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>只能選一個答案！</h1>
+    <button class="button" onclick="alert('你選對了！')">謝仲恩很帥</button>
+    <button class="button" id="runaway" onmouseover="moveButton()">謝仲恩很醜</button>
+
+    <script>
+        const runawayButton = document.getElementById("runaway");
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            runawayButton.style.left = `${x}px`;
+            runawayButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
